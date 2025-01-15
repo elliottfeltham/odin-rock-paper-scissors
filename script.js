@@ -17,7 +17,9 @@ console.log(getComputerChoice())
 
 function getHumanChoice() {
     let answer = prompt("Enter your choice: ");
-    let userChoice = answer  // Add input validation and error handling later
+    let userChoice = answer.charAt(0).toUpperCase() + answer.slice(1).toLowerCase();
+    // Add input validation and error handling later
+
     return userChoice
 }
 
