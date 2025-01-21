@@ -14,7 +14,7 @@ function getComputerChoice() {
 // Get users choice with prompt
 
 function getHumanChoice() {
-    let answer = prompt("Enter your choice; Rock, Paper or Scissors: ");
+    // let answer = prompt("Enter your choice; Rock, Paper or Scissors: ");
 
     // Check that answer is not null
     if (!answer) {
@@ -60,11 +60,11 @@ function playRound(computerChoice, humanChoice) {
 
 function playGame() {
 
-    for (i = 0; i < 5; i++) {
-        const computerChoice = getComputerChoice();
-        const humanChoice = getHumanChoice();
-        playRound(computerChoice, humanChoice);
-    }
+    // for (i = 0; i < 5; i++) {
+    //     const computerChoice = getComputerChoice();
+    //     const humanChoice = getHumanChoice();
+    //     playRound(computerChoice, humanChoice);
+    // }
 
     if (humanScore > computerScore) {
         console.log(`You win! You: ${humanScore} - Computer: ${computerScore}`);
