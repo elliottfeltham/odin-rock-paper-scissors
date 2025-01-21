@@ -1,6 +1,7 @@
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
 const scissorsButton = document.querySelector("#scissors");
+const roundResult = document.querySelector("#round-result");
 
 // Get Computers choice with random number generator
 
@@ -22,20 +23,20 @@ let computerScore = 0;
 
 // Write logic to play a single round and compute winner with conditionals
 
-function playRound(computerChoice, humanChoice) {
+function playRound(humanChoice, computerChoice) {
     if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        console.log("You win! Rock beats Scissors!");
+        roundResult.textContent = "You win! Rock beats Scissors!";
         humanScore ++;
     } else if (humanChoice === "Paper" && computerChoice === "Rock") {
-        console.log("You win! Paper beats Rock!");
+        roundResult.textContent = "You win! Paper beats Rock!";
         humanScore ++;
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
-        console.log("You win! Scissors beats Paper!");
+        roundResult.textContent = "You win! Scissors beats Paper!";
         humanScore ++;
     } else if (humanChoice === computerChoice) {
-        console.log(`Its a tie! You both chose ${humanChoice}`);
+        roundResult.textContent = `Its a tie! You both chose ${humanChoice}`;
     } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        roundResult.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     }
 }
