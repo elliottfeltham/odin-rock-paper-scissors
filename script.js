@@ -1,3 +1,7 @@
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
 // Get Computers choice with random number generator
 
 function getComputerChoice() {
@@ -10,26 +14,6 @@ function getComputerChoice() {
         return "Scissors";
     }
 };
-
-// Get users choice with prompt
-
-function getHumanChoice() {
-    // let answer = prompt("Enter your choice; Rock, Paper or Scissors: ");
-
-    // Check that answer is not null
-    if (!answer) {
-        return getHumanChoice();
-    }
-
-    // Check answer is stylized correctly
-    let humanChoice = answer.charAt(0).toUpperCase() + answer.slice(1).toLowerCase();
-
-    // Check that answer is valid
-    if (humanChoice !== "Rock" && humanChoice !== "Paper" && humanChoice !== "Scissors") {
-        return getHumanChoice();
-    } 
-    return humanChoice;
-}
 
 // Initialize each players score variables
 
@@ -58,14 +42,7 @@ function playRound(computerChoice, humanChoice) {
 
 // Write logic to play 5 rounds and track the score
 
-function playGame() {
-
-    // for (i = 0; i < 5; i++) {
-    //     const computerChoice = getComputerChoice();
-    //     const humanChoice = getHumanChoice();
-    //     playRound(computerChoice, humanChoice);
-    // }
-
+function playGame() {    
     if (humanScore > computerScore) {
         console.log(`You win! You: ${humanScore} - Computer: ${computerScore}`);
     } else if (humanScore < computerScore) {
@@ -75,6 +52,22 @@ function playGame() {
     }
 }
 
+let humanChoice;
+
+rockButton.addEventListener("click", () => {
+    humanChoice = "Rock";
+    playRound(humanChoice, getComputerChoice());
+});
+    
+paperButton.addEventListener("click", () => {
+    humanChoice = "Paper";
+    playRound(humanChoice, getComputerChoice());
+});
+
+scissorsButton.addEventListener("click", () => {
+    humanChoice = "Scissors";
+    playRound(humanChoice, getComputerChoice());
+});
 
 playGame();
 
